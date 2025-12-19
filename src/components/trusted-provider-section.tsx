@@ -46,7 +46,6 @@ export function TrustedProviderSection() {
                         alt="BDMS Hospital Network Partners"
                         width={1500}
                         height={900}
-                        className="w-7xl object-cover"
                     />
                 </div>
             </section>
