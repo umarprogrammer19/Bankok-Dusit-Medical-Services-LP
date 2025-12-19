@@ -3,7 +3,7 @@ import { TrustedProviderSection } from "@/components/trusted-provider-section"
 import { AboutSection } from "@/components/about-section"
 import { FAQSection } from "@/components/faq-section"
 import { SpecialitiesSection } from "@/components/specialities-section"
-// import { RegisterSection } from "@/components/register-section"
+import { RegisterSection } from "@/components/register-section"
 // import { FooterSection } from "@/components/footer-section"
 
 export default function Home() {
@@ -14,8 +14,8 @@ export default function Home() {
       <AboutSection />
       <FAQSection />
       <SpecialitiesSection />
-      {/* 
       <RegisterSection />
+      {/* 
       <FooterSection /> 
       */}
     </main>
