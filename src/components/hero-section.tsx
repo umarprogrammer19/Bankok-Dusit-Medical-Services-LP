@@ -1,6 +1,5 @@
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import Wrapper from "./wrapper"
+import Image from "next/image"
 
 export function HeroSection() {
     return (
