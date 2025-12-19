@@ -39,10 +39,10 @@ export function TrustedProviderSection() {
                             <SwiperSlide key={index}>
                                 <div className="space-y-3 md:space-y-5">
                                     <div className="text-4xl md:text-6xl font-isans font-bold text-[#0C73B5]">{value.number}</div>
-                                    <div className="text-[#FF6F61] font-semibold tracking-wider text-xs md:text-lg uppercase">
+                                    <div className="text-[#FF6F61] font-semibold tracking-wider text-sm md:text-lg uppercase">
                                         {value.title}
                                     </div>
-                                    <p className="text-[#58595B] text-xs md:text-[18px] text-balance leading-6 min-h-28">{value.description}</p>
+                                    <p className="text-[#58595B] text-xs md:text-[18px] text-balance md:leading-6 min-h-12 md:min-h-28">{value.description}</p>
                                     <div className="rounded-xl overflow-hidden">
                                         <Image
                                             src={value.image || "/placeholder.svg"}
