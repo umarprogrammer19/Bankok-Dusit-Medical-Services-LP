@@ -4,41 +4,42 @@ import Wrapper from "./wrapper"
 
 export function HeroSection() {
     return (
-        <main className="mx-auto w-full max-w-360 px-4 bg-[url('/hero-background.png')] bg-cover bg-center bg-no-repeat">
-            <section className="relative min-h-125 md:min-h-200 overflow-hidden w-full md:w-[90%] mx-auto flex items-center">
+        <main className="mx-auto w-full max-w-360 md:px-4 bg-[url('/hero-background.png')] bg-cover bg-center bg-no-repeat">
+            <section className="relative md:min-h-200 overflow-hidden w-full md:w-[90%] mx-auto flex items-start md:items-center flex-col md:flex-row">
                 {/* BDMS Logo */}
-                <div className="absolute w-56 h-32 top-10 -left-6">
+                <div className="absolute w-56 h-32 hidden top-10 -left-6 md:block">
                     <Image src={"/logo.svg"} alt="Logo BDSM" width={700} height={100} className="w-full h-full object-cover" />
                 </div>
-                <div className="relative z-10 container mx-auto py-8 md:py-12">
-                    <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div className="w-32 h-24 flex justify-start md:hidden">
+                    <Image src={"/logo.svg"} alt="Logo BDSM" width={700} height={100} className="w-full h-full object-cover" />
+                </div>
+                <div className="relative z-10 container mx-auto md:py-12">
+                    <div className="flex flex-col lg:flex-row items-center justify-between md:gap-8">
                         {/* Left Content */}
-                        <div className="flex-1 max-w-xl space-y-6">
+                        <div className="flex-1 max-w-xl space-y-2 md:space-y-6">
                             {/* Headline */}
-                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#0C73B5] leading-tighter">
-                                Meet Our Expert
-                                <br />
-                                Teams At The <span className="text-[#ED1C24]">BDMS</span>
-                                <br />
+                            <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#0C73B5] leading-tighter">
+                                <span>Meet Our Expert</span>
+                                <p><span>Teams At The</span> <span className="text-[#ED1C24]">BDMS</span></p>
                                 <span className="text-[#0C73B5]">UAE Roadshow</span>
                             </h1>
 
                             <p className="text-[#58595B] text-base md:text-xl">Register Below For Free</p>
 
                             {/* CTA Button */}
-                            <Button className="bg-[#ED1C24] hover:bg-[#c91920] text-white px-8 md:px-16 py-5 md:py-6 text-base md:text-xl rounded-full font-semibold shadow-lg hover:shadow-xl transition-all mt-10">
+                            <Button className="bg-[#ED1C24] hover:bg-[#c91920] text-white px-8 md:px-16 py-5 md:py-6 text-base md:text-xl rounded-full font-semibold shadow-lg hover:shadow-xl transition-all md:mt-10">
                                 SIGN UP
                             </Button>
                         </div>
 
                         {/* Right Content - Doctors Image */}
                         <div className="flex-1 flex justify-center lg:justify-end">
-                            <div className="relative w-full max-w-md lg:max-w-lg">
+                            <div className="relative w-full lg:max-w-xl">
                                 <Image
                                     src="/hero-doc.png"
                                     alt="BDMS Medical Team - Professional doctors ready to assist you"
-                                    width={500}
-                                    height={550}
+                                    width={800}
+                                    height={800}
                                     className="object-contain"
                                     priority
                                 />
