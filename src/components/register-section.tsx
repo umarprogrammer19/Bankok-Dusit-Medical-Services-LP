@@ -24,7 +24,7 @@ export function RegisterSection() {
 
     return (
         <Wrapper>
-            <section id="register" className="bg-[#f8fbfd] py-16 w-full md:w-[90%] mx-auto">
+            <section id="register" className="bg-[#f8fbfd] py-16 md:pb-28 w-full md:w-[90%] mx-auto">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#0C73B5] text-center mb-8 md:mb-10">
                         Register Your Interest
