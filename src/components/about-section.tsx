@@ -26,7 +26,7 @@ export function AboutSection() {
                         <div className="w-full md:w-[54%] space-y-5">
                             <h2 className="text-3xl md:text-4xl font-bold text-[#0C73B5]">About Us</h2>
 
-                            <div className="flex flex-col gap-6 md:w-[65%]">
+                            <div className="flex flex-col gap-3 md:gap-6 md:w-[65%]">
                                 <p className="text-[#58595B] leading-tight text-xs md:text-[19px]">
                                     The BDMS UAE Roadshow 2026 is a multi-city healthcare awareness initiative designed to connect UAE
                                     residents with one of the world's largest private hospital networks.
