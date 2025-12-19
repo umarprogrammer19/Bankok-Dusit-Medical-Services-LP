@@ -10,7 +10,7 @@ export function AboutSection() {
         <Wrapper className="bg-[url('/about-background.png')] bg-top bg-cover bg-no-repeat">
             <section className="relative py-16 overflow-hidden mx-auto w-full lg:w-[90%]">
                 <div className="relative z-10 container mx-auto">
-                    <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-8 lg:gap-0 max-w-7xl mx-auto">
+                    <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-8 lg:gap-0 max-w-7xl mx-auto md:px-6 lg:px-0">
                         {/* Image */}
                         <div className="w-screen mx-auto relative sm:left-[5%] md:left-[12.5%] lg:left-0 lg:w-[46%]">
                             <Image
