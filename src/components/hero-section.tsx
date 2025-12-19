@@ -5,7 +5,7 @@ import Wrapper from "./wrapper"
 export function HeroSection() {
     return (
         <main className="mx-auto w-full max-w-360 md:px-4 bg-[url('/hero-background.png')] bg-cover bg-center bg-no-repeat">
-            <section className="relative md:min-h-200 overflow-hidden w-full md:w-[90%] mx-auto flex items-start md:items-center flex-col md:flex-row">
+            <section className="relative min-h-screen md:min-h-200 overflow-hidden w-full md:w-[90%] mx-auto flex items-start md:items-center flex-col md:flex-row">
                 {/* BDMS Logo */}
                 <div className="absolute w-56 h-32 hidden top-10 -left-6 md:block">
                     <Image src={"/logo.svg"} alt="Logo BDSM" width={700} height={100} className="w-full h-full object-cover" />
@@ -33,7 +33,7 @@ export function HeroSection() {
                         </div>
 
                         {/* Right Content - Doctors Image */}
-                        <div className="flex-1 flex justify-center lg:justify-end">
+                        <div className="flex-1 flex justify-center lg:justify-end mt-8 md:mt-0">
                             <div className="relative w-full lg:max-w-xl">
                                 <Image
                                     src="/hero-doc.png"
