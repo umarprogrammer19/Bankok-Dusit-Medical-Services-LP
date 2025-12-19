@@ -14,16 +14,8 @@ export function HeroSection() {
                     {/* Left Content */}
                     <div className="flex-1 max-w-xl space-y-6">
                         {/* BDMS Logo */}
-                        <div className="flex items-center gap-2">
-                            <div className="flex items-baseline">
-                                <span className="text-3xl md:text-4xl font-bold text-[#0C73B5]">B</span>
-                                <span className="text-3xl md:text-4xl font-bold text-[#ED1C24]">D</span>
-                                <span className="text-3xl md:text-4xl font-bold text-[#0C73B5]">MS</span>
-                            </div>
-                            <div className="text-[8px] md:text-[10px] leading-tight text-[#0C73B5] border-l border-[#0C73B5] pl-2">
-                                <div className="font-semibold">Bangkok Dusit Medical Services</div>
-                                <div>Your Trusted Healthcare Network</div>
-                            </div>
+                        <div className="flex justify-start items-center gap-2 w-56 h-32 relative right-6">
+                            <Image src={"/logo.svg"} alt="Logo BDSM" width={700} height={100} className="w-full h-full object-cover" />
                         </div>
 
                         {/* Headline */}
