@@ -5,7 +5,7 @@ import Wrapper from "./wrapper"
 export function FAQSection() {
     return (
         <Wrapper>
-            <section className="py-16 md:py-20 w-[90%] mx-auto">
+            <section className="py-16 md:pt-20 md:pb-10 w-[90%] mx-auto">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#0C73B5] text-center mb-8 md:mb-16">
                         Frequently Asked Questions
