@@ -6,12 +6,12 @@ interface Specialities {
 
 export const specialities: Specialities[] = [
     {
-        icon: "/icons/injection.svg",
+        icon: "/icons/pill.svg",
         title: "Pediatrics",
         description: "Medical care information for children across different ages.",
     },
     {
-        icon: "/icons/DNA.svg",
+        icon: "/icons/injection.svg",
         title: "Cancer",
         description: "Overview of oncology services, treatment approaches, and support.",
     },
@@ -36,7 +36,7 @@ export const specialities: Specialities[] = [
         description: "Supportive care focused on recovery, mobility, and functional improvement.",
     },
     {
-        icon: "/icons/health.svg",
+        icon: "/icons/DNA.svg",
         title: "Urology",
         description: "Guidance on urinary tract and male reproductive health services.",
     },
@@ -46,7 +46,7 @@ export const specialities: Specialities[] = [
         description: "Preventive health, lifestyle management, & overall wellbeing support.",
     },
     {
-        icon: "/icons/pill.svg",
+        icon: "/icons/health.svg",
         title: "Children",
         description: "Focused on the medical needs of infants, children, and adolescents.",
     },

@@ -20,8 +20,8 @@ export function SpecialitiesSection() {
                                     <Image
                                         src={specialty.icon || "/placeholder.svg"}
                                         alt={specialty.title}
-                                        width={35}
-                                        height={35}
+                                        width={40}
+                                        height={40}
                                         className="text-[#0C73B5]"
                                     />
                                 </div>
