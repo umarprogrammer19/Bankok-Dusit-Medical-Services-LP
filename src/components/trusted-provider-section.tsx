@@ -17,39 +17,37 @@ export function TrustedProviderSection() {
                     </div>
 
                     {/* Values Grid */}
-                    <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto mb-12 md:mb-16">
+                    <div className="grid md:grid-cols-3 gap-6 md:gap-16 max-w-5xl mx-auto mb-12 md:mb-10">
                         {values.map((value, index) => (
-                            <div key={index} className="space-y-3 md:space-y-4">
-                                <div className="text-4xl md:text-5xl font-bold text-[#0C73B5]">{value.number}</div>
-                                <div className="text-[#0C73B5] font-semibold tracking-wider text-xs md:text-sm uppercase">
+                            <div key={index} className="space-y-3 md:space-y-5">
+                                <div className="text-4xl md:text-6xl font-isans font-bold text-[#0C73B5]">{value.number}</div>
+                                <div className="text-[#FF6F61] font-semibold tracking-wider text-xs md:text-lg uppercase">
                                     {value.title}
                                 </div>
-                                <p className="text-[#4a6fa5] text-xs md:text-sm leading-relaxed">{value.description}</p>
-                                <div className="rounded-xl overflow-hidden border-4 border-[#0C73B5]">
+                                <p className="text-[#58595B] text-xs md:text-[18px] text-balance leading-6 min-h-28">{value.description}</p>
+                                <div className="rounded-xl overflow-hidden">
                                     <Image
                                         src={value.image || "/placeholder.svg"}
                                         alt={value.title}
-                                        width={350}
-                                        height={200}
-                                        className="w-full h-40 md:h-48 object-cover"
+                                        width={800}
+                                        height={500}
+                                        className="w-full h-40 md:h-56 object-cover"
                                     />
                                 </div>
                             </div>
                         ))}
                     </div>
 
-                    {/* Hospital Logos */}
-                    <div className="pt-8 border-t border-gray-200">
-                        <div className="flex justify-center">
-                            <Image
-                                src="/logos-line.png"
-                                alt="BDMS Hospital Network Partners"
-                                width={900}
-                                height={60}
-                                className="h-8 md:h-10 w-auto object-contain"
-                            />
-                        </div>
-                    </div>
+                </div>
+                {/* Hospital Logos */}
+                <div className="flex justify-center">
+                    <Image
+                        src="/logos-line.png"
+                        alt="BDMS Hospital Network Partners"
+                        width={1500}
+                        height={900}
+                        className="w-7xl object-cover"
+                    />
                 </div>
             </section>
         </Wrapper>
