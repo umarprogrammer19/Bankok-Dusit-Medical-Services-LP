@@ -1,6 +1,6 @@
 import { HeroSection } from "@/components/hero-section"
 import { TrustedProviderSection } from "@/components/trusted-provider-section"
-// import { AboutSection } from "@/components/about-section"
+import { AboutSection } from "@/components/about-section"
 // import { SpecialitiesSection } from "@/components/specialities-section"
 // import { RegisterSection } from "@/components/register-section"
 // import { FAQSection } from "@/components/faq-section"
@@ -11,8 +11,8 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       <TrustedProviderSection />
-      {/* 
       <AboutSection />
+      {/* 
       <SpecialitiesSection />
       <RegisterSection />
       <FAQSection />
