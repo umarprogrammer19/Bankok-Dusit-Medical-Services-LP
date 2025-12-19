@@ -1,4 +1,11 @@
-export const values = [
+interface TrustedProviderDataType {
+    number: string;
+    title: string;
+    description: string;
+    image: string;
+}
+
+export const values: TrustedProviderDataType[] = [
     {
         number: "01",
         title: "VALUE",
