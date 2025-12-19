@@ -38,6 +38,7 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --font-isans: var(--font-ibm-plex), system-ui, -apple-system, sans-serif;
 }
 
 .dark {
@@ -131,4 +132,8 @@
 
 body {
   font-family: Helvetica, sans-serif;
+}
+
+.font-isans {
+  font-family: var(--font-isans);
 }
