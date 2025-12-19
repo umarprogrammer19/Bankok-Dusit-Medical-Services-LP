@@ -16,10 +16,67 @@ export function RegisterSection() {
         venue: "",
         speciality: "",
     })
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
-        console.log("Form submitted:", formData)
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            // Validate required fields
+            if (!formData.name || !formData.mobile || !formData.email) {
+                setSubmitStatus({ type: 'error', message: 'Name, Mobile, and Email are required fields' });
+                return;
+            }
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                setSubmitStatus({ type: 'error', message: 'Please enter a valid email address' });
+                return;
+            }
+
+            // Send data to Google Sheets via Apps Script
+            const response = await fetch('https://script.google.com/macros/s/AKfycbw8ba430EJHzL9FyCMRsglfA0W_xtW9H3_ItQVgoXnDhSFVqYPAW9O9P5YaoUi7BYbWCw/exec', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    name: formData.name,
+                    mobile: formData.mobile,
+                    email: formData.email,
+                    located: formData.location,
+                    venue: formData.venue,
+                    speciality: formData.speciality,
+                }).toString(),
+            });
+
+            const result = await response.json();
+
+            if (result.error) {
+                setSubmitStatus({ type: 'error', message: result.error });
+            } else {
+                setSubmitStatus({ type: 'success', message: 'Form submitted successfully!' });
+                // Reset form after successful submission
+                setFormData({
+                    name: "",
+                    mobile: "",
+                    email: "",
+                    location: "",
+                    venue: "",
+                    speciality: "",
+                });
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setSubmitStatus({ type: 'error', message: 'An error occurred while submitting the form. Please try again.' });
+        } finally {
+            setIsSubmitting(false);
+        }
     }
 
     return (
@@ -57,42 +114,42 @@ export function RegisterSection() {
                         {/* Second Row - Select Dropdowns */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                             <Select onValueChange={(value) => setFormData({ ...formData, location: value })}>
-                                <SelectTrigger className="bg-white border-[#d1e3f0] w-full rounded-lg h-12 text-[17px] text-[#949494] data-[state=open]:text-[#1a365d] py-6 cursor-pointer">
+                                <SelectTrigger className="bg-white border-[#d1e3f0] w-full rounded-lg h-12 text-[17px] text-[#949494] data-[state=open]:text-[#1a365d] data-placeholder:text-[#949494] data-placeholder:font-normal data-[state=open]:border-[#0C73B5] data-[state=closed]:border-[#d1e3f0] transition-all duration-200 hover:border-[#0C73B5] focus:ring-2 focus:ring-[#0C73B5]/30 py-6 focus:outline-none data-[state=open]:bg-[#f8fbfd]">
                                     <SelectValue placeholder="Where are you located?" />
                                 </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="dubai">Abu Dhabi</SelectItem>
-                                    <SelectItem value="abudhabi">Dubai</SelectItem>
-                                    <SelectItem value="sharjah">Fujairah</SelectItem>
-                                    <SelectItem value="riyadh">Ras Al Khaimah</SelectItem>
-                                    <SelectItem value="jeddah">Ajman</SelectItem>
-                                    <SelectItem value="jeddah">Sharjah</SelectItem>
+                                <SelectContent className="bg-white border-[#d1e3f0] rounded-lg shadow-lg p-2 max-h-60 overflow-auto z-100">
+                                    <SelectItem value="abudhabi" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Abu Dhabi</SelectItem>
+                                    <SelectItem value="dubai" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Dubai</SelectItem>
+                                    <SelectItem value="fujairah" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Fujairah</SelectItem>
+                                    <SelectItem value="ras-alkhaimah" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Ras Al Khaimah</SelectItem>
+                                    <SelectItem value="ajman" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Ajman</SelectItem>
+                                    <SelectItem value="sharjah" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Sharjah</SelectItem>
                                 </SelectContent>
                             </Select>
 
                             <Select onValueChange={(value) => setFormData({ ...formData, venue: value })}>
-                                <SelectTrigger className="bg-white border-[#d1e3f0] w-full rounded-lg h-12 text-[17px] text-[#949494] data-[state=open]:text-[#1a365d] py-6 cursor-pointer">
+                                <SelectTrigger className="bg-white border-[#d1e3f0] w-full rounded-lg h-12 text-[17px] py-6 text-[#949494] data-[state=open]:text-[#1a365d] data-placeholder:text-[#949494] data-placeholder:font-normal data-[state=open]:border-[#0C73B5] data-[state=closed]:border-[#d1e3f0] transition-all duration-200 hover:border-[#0C73B5] focus:ring-2 focus:ring-[#0C73B5]/30 focus:outline-none">
                                     <SelectValue placeholder="Choose your venue" />
                                 </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="venue1">Abu Dhabi 24th January</SelectItem>
-                                    <SelectItem value="venue2">Dubai 25th January</SelectItem>
+                                <SelectContent className="bg-white border-[#d1e3f0] rounded-lg shadow-lg p-2 max-h-60 overflow-auto z-100">
+                                    <SelectItem value="venue1" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Abu Dhabi 24th January</SelectItem>
+                                    <SelectItem value="venue2" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Dubai 25th January</SelectItem>
                                 </SelectContent>
                             </Select>
 
                             <Select onValueChange={(value) => setFormData({ ...formData, speciality: value })}>
-                                <SelectTrigger className="bg-white border-[#d1e3f0] w-full rounded-lg h-12 text-[17px] text-[#949494] data-[state=open]:text-[#1a365d] py-6 cursor-pointer">
+                                <SelectTrigger className="bg-white border-[#d1e3f0] w-full rounded-lg h-12 text-[17px] py-6 text-[#949494] data-[state=open]:text-[#1a365d] data-placeholder:text-[#949494] data-placeholder:font-normal data-[state=open]:border-[#0C73B5] data-[state=closed]:border-[#d1e3f0] transition-all duration-200 hover:border-[#0C73B5] focus:ring-2 focus:ring-[#0C73B5]/30 focus:outline-none data-[state=open]:bg-[#f8fbfd]">
                                     <SelectValue placeholder="Speciality" />
                                 </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="pediatrics">Pediatrics</SelectItem>
-                                    <SelectItem value="cancer">Cancer</SelectItem>
-                                    <SelectItem value="brain">Brain</SelectItem>
-                                    <SelectItem value="heart">Heart</SelectItem>
-                                    <SelectItem value="orthopedics">Orthopedics & Trauma</SelectItem>
-                                    <SelectItem value="rehabilitation">Children</SelectItem>
-                                    <SelectItem value="urology">Urology</SelectItem>
-                                    <SelectItem value="wellness">Wellness</SelectItem>
+                                <SelectContent className="bg-white border-[#d1e3f0] rounded-lg shadow-lg p-2 max-h-60 overflow-auto z-100">
+                                    <SelectItem value="pediatrics" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Pediatrics</SelectItem>
+                                    <SelectItem value="cancer" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Cancer</SelectItem>
+                                    <SelectItem value="brain" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Brain</SelectItem>
+                                    <SelectItem value="heart" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Heart</SelectItem>
+                                    <SelectItem value="orthopedics" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Orthopedics & Trauma</SelectItem>
+                                    <SelectItem value="children" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Children</SelectItem>
+                                    <SelectItem value="urology" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Urology</SelectItem>
+                                    <SelectItem value="wellness" className="py-2 px-2 rounded-md data-highlighted:bg-[#f0f7ff] data-highlighted:text-[#0C73B5] data-[state=checked]:bg-[#e6f2ff] data-[state=checked]:text-[#0C73B5] transition-colors cursor-pointer">Wellness</SelectItem>
                                 </SelectContent>
                             </Select>
                         </div>
@@ -101,11 +158,19 @@ export function RegisterSection() {
                         <div className="md:text-center">
                             <Button
                                 type="submit"
-                                className="bg-[#ED1C24] hover:bg-[#c91920] text-white px-10 md:px-14 py-5 md:py-6 cursor-pointer text-base md:text-lg rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
+                                disabled={isSubmitting}
+                                className="bg-[#ED1C24] hover:bg-[#c91920] text-white px-10 md:px-14 py-5 md:py-6 cursor-pointer text-base md:text-lg rounded-full font-semibold shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                SIGN UP
+                                {isSubmitting ? 'SUBMITTING...' : 'SIGN UP'}
                             </Button>
                         </div>
+
+                        {/* Status Messages */}
+                        {submitStatus && (
+                            <div className={`mt-4 p-4 rounded-lg text-center ${submitStatus.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                                {submitStatus.message}
+                            </div>
+                        )}
                     </form>
                 </div>
             </section>
