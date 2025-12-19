@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function TrustedProviderSection() {
     return (
-        <section className="bg-white py-16 md:py-20">
+        <section className="bg-white py-16 md:py-10">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-10 md:mb-14 max-w-3xl mx-auto">

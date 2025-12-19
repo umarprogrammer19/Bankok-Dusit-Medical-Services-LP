@@ -5,16 +5,15 @@ import Wrapper from "./wrapper"
 export function HeroSection() {
     return (
         <main className="mx-auto w-full max-w-360 px-4 bg-[url('/hero-background.png')] bg-cover bg-center bg-no-repeat">
-            <section className="relative min-h-125 md:min-h-150 overflow-hidden w-full md:w-[90%] mx-auto">
+            <section className="relative min-h-125 md:min-h-200 overflow-hidden w-full md:w-[90%] mx-auto flex items-center">
+                {/* BDMS Logo */}
+                <div className="absolute w-56 h-32 top-10 -left-6">
+                    <Image src={"/logo.svg"} alt="Logo BDSM" width={700} height={100} className="w-full h-full object-cover" />
+                </div>
                 <div className="relative z-10 container mx-auto py-8 md:py-12">
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                         {/* Left Content */}
                         <div className="flex-1 max-w-xl space-y-6">
-                            {/* BDMS Logo */}
-                            <div className="flex justify-start items-center gap-2 w-56 h-32 relative right-6">
-                                <Image src={"/logo.svg"} alt="Logo BDSM" width={700} height={100} className="w-full h-full object-cover" />
-                            </div>
-
                             {/* Headline */}
                             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#0C73B5] leading-tighter">
                                 Meet Our Expert
