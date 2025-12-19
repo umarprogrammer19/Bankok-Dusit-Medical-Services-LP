@@ -4,13 +4,8 @@ import Wrapper from "./wrapper"
 
 export function HeroSection() {
     return (
-        <Wrapper>
+        <main className="mx-auto w-full max-w-360 px-4 bg-[url('/hero-background.png')] bg-cover bg-center bg-no-repeat">
             <section className="relative min-h-125 md:min-h-150 overflow-hidden w-[90%] mx-auto">
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                    <Image src="/hero-background.png" alt="" fill className="object-cover object-center" priority />
-                </div>
-
                 <div className="relative z-10 container mx-auto py-8 md:py-12">
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                         {/* Left Content */}
@@ -21,18 +16,18 @@ export function HeroSection() {
                             </div>
 
                             {/* Headline */}
-                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#0C73B5] leading-tight">
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-[#0C73B5] leading-tighter">
                                 Meet Our Expert
                                 <br />
-                                Teams At The <span className="text-[#0C73B5]">BDMS</span>
+                                Teams At The <span className="text-[#ED1C24]">BDMS</span>
                                 <br />
                                 <span className="text-[#0C73B5]">UAE Roadshow</span>
                             </h1>
 
-                            <p className="text-[#1a365d] text-base md:text-lg">Register Below For Free</p>
+                            <p className="text-[#58595B] text-base md:text-xl">Register Below For Free</p>
 
                             {/* CTA Button */}
-                            <Button className="bg-[#ED1C24] hover:bg-[#c91920] text-white px-8 md:px-10 py-5 md:py-6 text-base md:text-lg rounded-full font-semibold shadow-lg hover:shadow-xl transition-all">
+                            <Button className="bg-[#ED1C24] hover:bg-[#c91920] text-white px-8 md:px-16 py-5 md:py-6 text-base md:text-xl rounded-full font-semibold shadow-lg hover:shadow-xl transition-all mt-10">
                                 SIGN UP
                             </Button>
                         </div>
@@ -53,6 +48,6 @@ export function HeroSection() {
                     </div>
                 </div>
             </section>
-        </Wrapper>
+        </main>
     )
 }
