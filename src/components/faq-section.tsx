@@ -5,9 +5,9 @@ import Wrapper from "./wrapper"
 export function FAQSection() {
     return (
         <Wrapper>
-            <section className="md:pt-20 md:pb-10 w-full md:w-[90%] mx-auto">
+            <section className="lg:pt-20 lg:pb-10 w-full lg:w-[90%] mx-auto">
                 <div className="container mx-auto sm:px-6 lg:px-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#0C73B5] text-center mb-8 md:mb-16">
+                    <h2 className="text-3xl lg:text-4xl font-bold text-[#0C73B5] text-center mb-8 lg:mb-16">
                         Frequently Asked Questions
                     </h2>
 
@@ -19,10 +19,10 @@ export function FAQSection() {
                                     value={`item-${index}`}
                                     className="bg-white border-none overflow-hidden shadow-sm"
                                 >
-                                    <AccordionTrigger className="px-3 md:px-6 py-4 text-left text-[#0C73B5] text-sm md:text-xl font-bold hover:no-underline hover:bg-[#0C73B5] hover:text-white rounded-t-sm rounded-b-none data-[state=open]:bg-[#0C73B5] data-[state=open]:text-white transition-colors [&[data-state=open]>svg]:text-white cursor-pointer">
+                                    <AccordionTrigger className="px-3 lg:px-6 py-4 text-left text-[#0C73B5] text-sm lg:text-xl font-bold hover:no-underline hover:bg-[#0C73B5] hover:text-white rounded-t-sm rounded-b-none data-[state=open]:bg-[#0C73B5] data-[state=open]:text-white transition-colors [&[data-state=open]>svg]:text-white cursor-pointer">
                                         {faq.question}
                                     </AccordionTrigger>
-                                    <AccordionContent className="px-3 rounded-t-none rounded-b-sm md:px-6 py-4 text-white text-xs md:text-[18px] leading-tight bg-[#0C73B5]">
+                                    <AccordionContent className="px-3 rounded-t-none rounded-b-sm lg:px-6 py-4 text-white text-xs lg:text-[18px] leading-tight bg-[#0C73B5]">
                                         {faq.answer}
                                     </AccordionContent>
                                 </AccordionItem>
