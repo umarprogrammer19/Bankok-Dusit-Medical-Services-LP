@@ -5,6 +5,17 @@ interface TrustedProviderDataType {
     image: string;
 }
 
+export const logos = [
+    { src: "/logos/1.svg", alt: "BDMS" },
+    { src: "/logos/2.svg", alt: "Bangkok Hospital" },
+    { src: "/logos/3.svg", alt: "Samitivej" },
+    { src: "/logos/4.svg", alt: "BNH Hospital" },
+    { src: "/logos/5.svg", alt: "Phyathai" },
+    { src: "/logos/6.svg", alt: "Paolo" },
+    { src: "/logos/7.svg", alt: "Royal Hospital" },
+    { src: "/logos/8.svg", alt: "BDMS Wellness Clinic" },
+]
+
 export const values: TrustedProviderDataType[] = [
     {
         number: "01",

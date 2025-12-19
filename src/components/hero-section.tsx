@@ -16,7 +16,7 @@ export function HeroSection() {
                 <div className="relative z-10 container mx-auto lg:py-12">
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between lg:gap-8">
                         {/* Left Content */}
-                        <div className="flex-1 max-w-xl space-y-2 lg:space-y-6">
+                        <div className="flex-1 max-w-xl space-y-2 lg:space-y-6 relative left-4 md:left-0">
                             {/* Headline */}
                             <h1 className="text-3xl sm:text-3xl lg:text-4xl lg:text-[42px] font-bold text-[#0C73B5] leading-tighter">
                                 <span>Meet Our Expert</span>

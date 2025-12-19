@@ -1,5 +1,5 @@
 "use client";
-import { values } from "@/data/trusted-provider";
+import { logos, values } from "@/data/trusted-provider";
 import Image from "next/image";
 import Wrapper from "./wrapper";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -61,13 +61,31 @@ export function TrustedProviderSection() {
 
                 </div>
                 {/* Hospital Logos */}
-                <div className="flex justify-center">
-                    <Image
-                        src="/logos-line.png"
-                        alt="BDMS Hospital Network Partners"
-                        width={1500}
-                        height={900}
-                    />
+                <div className="hidden items-center animate-scroll md:flex ">
+                    {/* First set of logos */}
+                    {logos.map((logo, index) => (
+                        <div key={`first-${index}`} className="shrink-0">
+                            <Image
+                                src={logo.src || "/placeholder.svg"}
+                                alt={logo.alt}
+                                width={200}
+                                height={200}
+                                className="h-8 md:h-24 lg:w-48 object-contain grayscale-0 hover:grayscale-0 transition-all duration-300"
+                            />
+                        </div>
+                    ))}
+                    {/* Duplicated set for seamless loop */}
+                    {logos.map((logo, index) => (
+                        <div key={`second-${index}`} className="shrink-0">
+                            <Image
+                                src={logo.src || "/placeholder.svg"}
+                                alt={logo.alt}
+                                width={200}
+                                height={200}
+                                className="h-8 md:h-24 lg:w-48 object-contain grayscale-0 hover:grayscale-0 transition-all duration-300"
+                            />
+                        </div>
+                    ))}
                 </div>
             </section>
         </Wrapper>
