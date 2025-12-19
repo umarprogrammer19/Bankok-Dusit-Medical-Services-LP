@@ -24,8 +24,8 @@ export function RegisterSection() {
 
     return (
         <Wrapper>
-            <section id="register" className="bg-[#f8fbfd] py-16 md:pb-28 w-full md:w-[90%] mx-auto">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <section id="register" className="bg-[#f8fbfd] pb-16 md:pb-28 w-full md:w-[90%] mx-auto">
+                <div className="container mx-auto sm:px-6 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#0C73B5] text-center mb-8 md:mb-10">
                         Register Your Interest
                     </h2>
@@ -98,7 +98,7 @@ export function RegisterSection() {
                         </div>
 
                         {/* Submit Button */}
-                        <div className="text-center">
+                        <div className="md:text-center">
                             <Button
                                 type="submit"
                                 className="bg-[#ED1C24] hover:bg-[#c91920] text-white px-10 md:px-14 py-5 md:py-6 cursor-pointer text-base md:text-lg rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
