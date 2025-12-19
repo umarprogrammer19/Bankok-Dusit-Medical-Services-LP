@@ -1,5 +1,9 @@
+interface FAQ {
+    question: string;
+    answer: string;
+}
 
-export const faqs = [
+export const faqs: FAQ[] = [
     {
         question: "Compliance & Disclaimer",
         answer:
