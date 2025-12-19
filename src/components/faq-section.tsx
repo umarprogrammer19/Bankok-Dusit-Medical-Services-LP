@@ -11,7 +11,7 @@ export function FAQSection() {
                         Frequently Asked Questions
                     </h2>
 
-                    <div className="max-w-4xl mx-auto">
+                    <div className="max-w-7xl mx-auto">
                         <Accordion type="single" collapsible defaultValue="item-0" className="space-y-3">
                             {faqs.map((faq, index) => (
                                 <AccordionItem
@@ -22,7 +22,7 @@ export function FAQSection() {
                                     <AccordionTrigger className="px-5 md:px-6 py-4 text-left text-[#0C73B5] text-sm md:text-xl font-bold hover:no-underline hover:bg-[#0C73B5] hover:text-white rounded-t-sm rounded-b-none data-[state=open]:bg-[#0C73B5] data-[state=open]:text-white transition-colors [&[data-state=open]>svg]:text-white cursor-pointer">
                                         {faq.question}
                                     </AccordionTrigger>
-                                    <AccordionContent className="px-5 rounded-t-none rounded-b-sm md:px-6 py-4 text-white text-[17px] leading-tight bg-[#0C73B5]">
+                                    <AccordionContent className="px-5 rounded-t-none rounded-b-sm md:px-6 py-4 text-white text-[18px] leading-tight bg-[#0C73B5]">
                                         {faq.answer}
                                     </AccordionContent>
                                 </AccordionItem>
