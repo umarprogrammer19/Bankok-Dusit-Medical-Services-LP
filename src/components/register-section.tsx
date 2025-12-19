@@ -61,11 +61,12 @@ export function RegisterSection() {
                                     <SelectValue placeholder="Where are you located?" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                    <SelectItem value="dubai">Dubai</SelectItem>
-                                    <SelectItem value="abudhabi">Abu Dhabi</SelectItem>
-                                    <SelectItem value="sharjah">Sharjah</SelectItem>
-                                    <SelectItem value="riyadh">Riyadh</SelectItem>
-                                    <SelectItem value="jeddah">Jeddah</SelectItem>
+                                    <SelectItem value="dubai">Abu Dhabi</SelectItem>
+                                    <SelectItem value="abudhabi">Dubai</SelectItem>
+                                    <SelectItem value="sharjah">Fujairah</SelectItem>
+                                    <SelectItem value="riyadh">Ras Al Khaimah</SelectItem>
+                                    <SelectItem value="jeddah">Ajman</SelectItem>
+                                    <SelectItem value="jeddah">Sharjah</SelectItem>
                                 </SelectContent>
                             </Select>
 
@@ -74,9 +75,8 @@ export function RegisterSection() {
                                     <SelectValue placeholder="Choose your venue" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                    <SelectItem value="venue1">Dubai Convention Center</SelectItem>
-                                    <SelectItem value="venue2">Abu Dhabi National Exhibition</SelectItem>
-                                    <SelectItem value="venue3">Riyadh International Convention</SelectItem>
+                                    <SelectItem value="venue1">Abu Dhabi 24th January</SelectItem>
+                                    <SelectItem value="venue2">Dubai 25th January</SelectItem>
                                 </SelectContent>
                             </Select>
 
@@ -89,8 +89,8 @@ export function RegisterSection() {
                                     <SelectItem value="cancer">Cancer</SelectItem>
                                     <SelectItem value="brain">Brain</SelectItem>
                                     <SelectItem value="heart">Heart</SelectItem>
-                                    <SelectItem value="orthopedics">Orthopedics</SelectItem>
-                                    <SelectItem value="rehabilitation">Rehabilitation</SelectItem>
+                                    <SelectItem value="orthopedics">Orthopedics & Trauma</SelectItem>
+                                    <SelectItem value="rehabilitation">Children</SelectItem>
                                     <SelectItem value="urology">Urology</SelectItem>
                                     <SelectItem value="wellness">Wellness</SelectItem>
                                 </SelectContent>
