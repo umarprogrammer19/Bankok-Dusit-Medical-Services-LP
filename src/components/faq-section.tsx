@@ -19,10 +19,10 @@ export function FAQSection() {
                                     value={`item-${index}`}
                                     className="bg-white border-none overflow-hidden shadow-sm"
                                 >
-                                    <AccordionTrigger className="px-5 md:px-6 py-4 text-left text-[#0C73B5] font-medium text-sm md:text-base hover:no-underline hover:bg-[#0C73B5] hover:text-white rounded-t-sm rounded-b-none data-[state=open]:bg-[#0C73B5] data-[state=open]:text-white transition-colors [&[data-state=open]>svg]:text-white cursor-pointer">
+                                    <AccordionTrigger className="px-5 md:px-6 py-4 text-left text-[#0C73B5] text-sm md:text-xl font-bold hover:no-underline hover:bg-[#0C73B5] hover:text-white rounded-t-sm rounded-b-none data-[state=open]:bg-[#0C73B5] data-[state=open]:text-white transition-colors [&[data-state=open]>svg]:text-white cursor-pointer">
                                         {faq.question}
                                     </AccordionTrigger>
-                                    <AccordionContent className="px-5 rounded-t-none rounded-b-sm md:px-6 py-4 text-white text-sm leading-relaxed bg-[#0C73B5]">
+                                    <AccordionContent className="px-5 rounded-t-none rounded-b-sm md:px-6 py-4 text-white text-[17px] leading-tight bg-[#0C73B5]">
                                         {faq.answer}
                                     </AccordionContent>
                                 </AccordionItem>
