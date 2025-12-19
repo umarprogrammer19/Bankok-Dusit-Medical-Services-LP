@@ -7,12 +7,12 @@ export function HeroSection() {
         <main className="mx-auto w-full max-w-360 lg:px-4 bg-[url('/hero-background.png')] bg-cover bg-center bg-no-repeat">
             <section className="relative min-h-screen lg:min-h-200 overflow-hidden w-full lg:w-[90%] mx-auto flex items-start lg:items-center flex-col lg:flex-row md:px-10 lg:px-0">
                 {/* BDMS Logo */}
-                <div className="absolute w-56 h-32 hidden top-10 -left-6 lg:block">
+                <a href="https://bdmsarabia.com/" target="_blank" className="absolute w-56 h-32 hidden top-10 -left-6 lg:block">
                     <Image src={"/logo.svg"} alt="Logo BDSM" width={700} height={100} className="w-full h-full object-cover" />
-                </div>
-                <div className="w-32 h-24 flex justify-start relative md:right-4 lg:hidden">
+                </a>
+                <a href="https://bdmsarabia.com/" target="_blank" className="w-32 h-24 flex justify-start relative md:right-4 lg:hidden">
                     <Image src={"/logo.svg"} alt="Logo BDSM" width={700} height={100} className="w-full h-full object-cover" />
-                </div>
+                </a>
                 <div className="relative z-10 container mx-auto lg:py-12">
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between lg:gap-8">
                         {/* Left Content */}
