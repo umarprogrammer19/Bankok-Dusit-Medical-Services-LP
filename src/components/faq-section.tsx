@@ -7,7 +7,7 @@ export function FAQSection() {
         <Wrapper>
             <section className="bg-[#e8f4fc] py-16 md:py-20 w-[90%] mx-auto">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#0C73B5] text-center mb-8 md:mb-10">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#0C73B5] text-center mb-8 md:mb-16">
                         Frequently Asked Questions
                     </h2>
 
