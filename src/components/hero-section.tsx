@@ -5,7 +5,7 @@ import Wrapper from "./wrapper"
 export function HeroSection() {
     return (
         <main className="mx-auto w-full max-w-360 px-4 bg-[url('/hero-background.png')] bg-cover bg-center bg-no-repeat">
-            <section className="relative min-h-125 md:min-h-150 overflow-hidden w-[90%] mx-auto">
+            <section className="relative min-h-125 md:min-h-150 overflow-hidden w-full md:w-[90%] mx-auto">
                 <div className="relative z-10 container mx-auto py-8 md:py-12">
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                         {/* Left Content */}
