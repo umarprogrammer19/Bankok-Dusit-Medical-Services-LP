@@ -5,8 +5,8 @@ import { useWindowWidth } from "@/hooks/use-mobile"
 
 export function AboutSection() {
     const width = useWindowWidth();
-
     return (
+        // ABout section
         <Wrapper className="bg-[url('/about-background.png')] bg-top bg-cover bg-no-repeat">
             <section className="relative py-16 overflow-hidden mx-auto w-full lg:w-[90%]">
                 <div className="relative z-10 container mx-auto">
